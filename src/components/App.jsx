@@ -55,16 +55,12 @@ class App extends React.Component {
     return (
       <div>
       <form onSubmit={this.handleSubmit}>
-        <p>Server Response:{this.state.successMeg}</p>
-        <label>
-          Name:
-          <input type="text" name='name' onChange={this.handleChange} />
-        </label>
-         <label> 
-           Message:
-           <input type='text' name='message' onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Send Message"  />
+        <p><font face='verdana'>Server Response:{this.state.successMeg}</font></p>
+
+          <font face="verdana">Name: <input type="text" name='name' onChange={this.handleChange} /></font>
+          <font face='verdana'>Message: <input type='text' name='message' onChange={this.handleChange} /></font>
+
+        <input type="submit" value="Send Message" width='100%'/>
       </form>
       </div>
     );
