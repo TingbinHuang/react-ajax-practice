@@ -26,7 +26,7 @@ class App extends React.Component {
     this.sendRequest(); 
   }
 
-  // function that use ajax to send request 
+  // function that use ajax to send out POST/GET request 
   sendRequest() {
     var message = {
       name: this.state.name,
@@ -50,6 +50,7 @@ class App extends React.Component {
     });     
   }
 
+  // render function 
   render() {
     return (
       <div>
