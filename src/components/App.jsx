@@ -12,17 +12,12 @@ class App extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.updateSuccessMeg = this.updateSuccessMeg.bind(this);
   }
 
   handleChange(event) {
     this.setState({
       [event.target.name]: event.target.value
     });
-  }
-
-  updateSuccessMeg(meg) {
-    this.setState ({successMeg:meg});
   }
 
   handleSubmit(event) {
@@ -37,8 +32,11 @@ class App extends React.Component {
       type: 'POST',
       data: JSON.stringify(message),
       contentType: 'application/json',
-      success: function (data) {
+      success: (data) => {
         console.log(data);
+        this.setState({
+          successMeg: data 
+        })
       },
       error: function (data) {
         console.error('chatterbox: Failed to send message', data);
@@ -50,9 +48,6 @@ class App extends React.Component {
     return (
 
       <div>
-
-         
-
       <form onSubmit={this.handleSubmit}>
         <p>Server Response:{this.state.successMeg}</p>
         <label>
@@ -74,6 +69,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-
-
